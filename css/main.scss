@@ -1,53 +1,101 @@
 ---
+# Only the main Sass file needs front matter (the dashes are enough)
 ---
+@charset "utf-8";
+@import "material-design-lite";
+@import "syntax-highlighting";
 
+// jekmdl variables
+html, body {
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.jekmdl-ribbon {
+  width: 100%;
+  height: 40vh;
+  background-color: #3F51B5;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+}
 
-@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
+.jekmdl-main {
+  margin-top: -35vh;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+}
 
-// Our variables
-$base-font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$base-font-weight: 400;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
+.jekmdl-header .mdl-layout__header-row {
+  padding-left: 40px;
+}
 
-$spacing-unit:     30px;
+.jekmdl-container {
+  max-width: 1600px;
+  width: calc(100% - 16px);
+  margin: 0 auto;
+}
 
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+.jekmdl-post-content {
+	padding: 10px 10px;
+}
 
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
+.jekmdl-content {
+  border-radius: 2px;
+  padding: 80px 56px;
+  margin-bottom: 80px;
+}
 
-// Width of the content area
-$content-width:    800px;
+.jekmdl-layout.is-small-screen .jekmdl-content {
+  padding: 40px 28px;
+}
 
-$on-palm:          600px;
-$on-laptop:        800px;
+.jekmdl-content h3 {
+  margin-top: 48px;
+}
 
+.jekmdl-footer {
+  padding-left: 40px;
+}
 
+.jekmdl-footer .mdl-mini-footer--link-list a {
+  font-size: 13px;
+}
+.jekmdl-post-list h2 {
+  font-size: 18px;
+}
+.jekmdl-post-list {
+    margin-left: 0;
+    list-style: none;
 
-// Use media queries like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
+    > li {
+        margin-bottom: 10px;
     }
 }
 
+/**
+ * Code formatting
+ */
+pre,
+code {
+    font-size: 13px;
+    border: 1px solid grey;
+    border-radius: 3px;
+    background-color: #eef;
+}
 
+code {
+    padding: 1px 5px;
+}
 
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "bootstrap-readable",
-        "layout",
-        "custom",
-        "syntax-highlighting"
-;
+pre {
+    padding: 8px 12px;
+    overflow-x: scroll;
+
+    > code {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}

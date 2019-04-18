@@ -1,33 +1,12 @@
-<footer>
-    <div class="container">
-        <div class="row p20">
-            {% if site.copyright.name %}
-                <div class="col-md-4 text-center mt25">All rights reserved by <a target="_blank" href="{{site.copyright.link}}">{{site.copyright.name}}</a></div>
-            {% endif %}
-
-            <div class="col-md-4 text-center mt25" >
-                {% if site.built-by %}
-                <a target="_blank" href="http://webjeda.com"><img src="https://img.shields.io/badge/Built%20by-webjeda-blue.svg" alt="{{site.built-by}}"></a>
-                {% endif %}
-            </div>
-            <div class="col-md-4 text-center mt25">
-               {% if site.facebook %}
-                <a target="_blank" href="{{site.facebook}}"><li class="social facebook"><i class="fa fa-facebook-square"></i></li></a> 
-                {% endif %}
-               {% if site.quora %}
-                <a target="_blank" href="{{site.quora}}"><li class="social quora"><i class="fa fa-quora"></i></li></a>
-                {% endif %}
-               {% if site.twitter %}
-                <a target="_blank" href="{{site.twitter}}"><li class="social twitter"><i class="fa fa-twitter-square"></i></li></a>
-                {% endif %}
-               {% if site.github %}
-                <a target="_blank" href="{{site.github}}"><li class="social github"><i class="fa fa-github-square"></i></li></a>
-                {% endif %}
-               {% if site.email %}
-                <a target="_blank" href="mailto:{{site.email}}"><li class="social email"><i class="fa fa-envelope"></i></li></a>
-                {% endif %}
-            </div>
-
-        </div> 
-    </div>
+<footer class="jekmdl-footer mdl-mini-footer">
+  <div class="mdl-mini-footer--left-section">
+    <ul class="mdl-mini-footer--link-list">
+      <li>&copy; 2016 <strong>{{ site.title }}</strong> is proudly powered by <a href='http://jekyllrb.com' target='_blank'>Jekyll</a></li>
+      <li><a href="{{ "/" | prepend: site.baseurl }}">Home</a></li>
+      {% for my_page in site.pages %}{% if my_page.title %}
+      <li><a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
+      {% endif %}{% endfor %}
+    </ul>
+  </div>
 </footer>
+<script src="{{ "/js/material.min.js" | prepend: site.baseurl }}"></script>

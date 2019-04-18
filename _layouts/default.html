@@ -1,28 +1,24 @@
----
-layout: compress
---- 
-
 <!DOCTYPE html>
 <html>
 
   {% include head.html %}
 
   <body>
+    <div class="jekmdl-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
 
     {% include header.html %}
 
-    <div class="container">
-      <div class="wrapper">
+    <div class="jekmdl-ribbon"></div>
+      <main class="jekmdl-main mdl-layout__content">
+      <div class="jekmdl-container mdl-grid">
+      <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+      <div class="jekmdl-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
         {{ content }}
       </div>
-    </div>
+      </div>
 
     {% include footer.html %}
-    
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <script src="{{site.baseurl}}/js/bootstrap.min.js"></script>
- {% if site.analytics %}{% include analytics.html %}{% endif %}
+    </main>
+   </div>
   </body>
-
 </html>
